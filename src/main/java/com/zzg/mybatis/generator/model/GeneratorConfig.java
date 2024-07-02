@@ -46,6 +46,8 @@ public class GeneratorConfig {
 
 	private boolean useLombokPlugin;
 
+	private boolean useSwaggerPlugin;
+
 	private boolean needForUpdate;
 
 	private boolean annotationDAO;
@@ -68,7 +70,15 @@ public class GeneratorConfig {
 
     private boolean jsr310Support;
 
-    public boolean isJsr310Support() {
+	public boolean isUseSwaggerPlugin() {
+		return useSwaggerPlugin;
+	}
+
+	public void setUseSwaggerPlugin(boolean useSwaggerPlugin) {
+		this.useSwaggerPlugin = useSwaggerPlugin;
+	}
+
+	public boolean isJsr310Support() {
         return jsr310Support;
     }
 

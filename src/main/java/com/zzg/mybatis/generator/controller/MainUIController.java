@@ -84,6 +84,8 @@ public class MainUIController extends BaseFXController {
     @FXML
     private CheckBox useLombokPlugin;
     @FXML
+    private CheckBox useSwaggerPlugin;
+    @FXML
     private CheckBox forUpdateCheckBox;
     @FXML
     private CheckBox annotationDAOCheckBox;
@@ -146,6 +148,9 @@ public class MainUIController extends BaseFXController {
 		});
 		// selectedProperty().addListener 解决应用配置的时候未触发Clicked事件
         useLombokPlugin.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            needToStringHashcodeEquals.setDisable(newValue);
+        });
+        useSwaggerPlugin.selectedProperty().addListener((observable, oldValue, newValue) -> {
             needToStringHashcodeEquals.setDisable(newValue);
         });
 
@@ -275,7 +280,9 @@ public class MainUIController extends BaseFXController {
         useDAOExtendStyle.setTooltip(new Tooltip("将通用接口方法放在公共接口中，DAO接口留空"));
         forUpdateCheckBox.setTooltip(new Tooltip("在Select语句中增加for update后缀"));
         useLombokPlugin.setTooltip(new Tooltip("实体类使用Lombok @Data简化代码"));
-	}
+        useLombokPlugin.setTooltip(new Tooltip("实体类使用Lombok @Data简化代码"));
+        this.useSwaggerPlugin.setTooltip(new Tooltip("实体类使用Swagger注解代码"));
+    }
 
     void loadLeftDBTree() {
         TreeItem rootTreeItem = leftDBTree.getRoot();
@@ -430,6 +437,7 @@ public class MainUIController extends BaseFXController {
         generatorConfig.setOverrideXML(overrideXML.isSelected());
         generatorConfig.setNeedToStringHashcodeEquals(needToStringHashcodeEquals.isSelected());
         generatorConfig.setUseLombokPlugin(useLombokPlugin.isSelected());
+        generatorConfig.setUseSwaggerPlugin(useSwaggerPlugin.isSelected());
         generatorConfig.setUseTableNameAlias(useTableNameAliasCheckbox.isSelected());
         generatorConfig.setNeedForUpdate(forUpdateCheckBox.isSelected());
         generatorConfig.setAnnotationDAO(annotationDAOCheckBox.isSelected());
@@ -462,6 +470,7 @@ public class MainUIController extends BaseFXController {
         overrideXML.setSelected(generatorConfig.isOverrideXML());
         needToStringHashcodeEquals.setSelected(generatorConfig.isNeedToStringHashcodeEquals());
         useLombokPlugin.setSelected(generatorConfig.isUseLombokPlugin());
+        useSwaggerPlugin.setSelected(generatorConfig.isUseSwaggerPlugin());
         useTableNameAliasCheckbox.setSelected(generatorConfig.getUseTableNameAlias());
         forUpdateCheckBox.setSelected(generatorConfig.isNeedForUpdate());
         annotationDAOCheckBox.setSelected(generatorConfig.isAnnotationDAO());
