@@ -42,6 +42,8 @@ public class GeneratorConfig {
 
 	private boolean overrideXML;
 
+	private boolean exampleEnhance;
+
 	private boolean needToStringHashcodeEquals;
 
 	private boolean useLombokPlugin;
@@ -69,6 +71,14 @@ public class GeneratorConfig {
     private boolean useSchemaPrefix;
 
     private boolean jsr310Support;
+
+	public boolean isExampleEnhance() {
+		return exampleEnhance;
+	}
+
+	public void setExampleEnhance(boolean exampleEnhance) {
+		this.exampleEnhance = exampleEnhance;
+	}
 
 	public boolean isUseSwaggerPlugin() {
 		return useSwaggerPlugin;

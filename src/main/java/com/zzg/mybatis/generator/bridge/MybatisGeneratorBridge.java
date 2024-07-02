@@ -257,11 +257,11 @@ public class MybatisGeneratorBridge {
                 context.addPluginConfiguration(pluginConfiguration);
             }
         }
-        //MySQL 重写 like 方法
-        if (DbType.MySQL.name().equals(dbType)) {
+        // example 增强插件
+        if (generatorConfig.isExampleEnhance()) {
             PluginConfiguration pluginConfiguration = new PluginConfiguration();
-            pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.MySQLLikePlugin");
-            pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.MySQLLikePlugin");
+            pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.ExampleEnhancePlugin");
+            pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.ExampleEnhancePlugin");
             context.addPluginConfiguration(pluginConfiguration);
         }
 

@@ -1,9 +1,5 @@
 package com.zzg.mybatis.generator.plugins;
 
-/**
- * Created by zouzhigang on 2016/6/14.
- */
-
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.*;
@@ -13,6 +9,10 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 
 import java.util.List;
 
+/**
+ * limit/offset插件
+ * Created by zouzhigang on 2016/6/14.
+ */
 public class MySQLLimitPlugin extends PluginAdapter {
 
     @Override

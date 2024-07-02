@@ -80,6 +80,8 @@ public class MainUIController extends BaseFXController {
     @FXML
 	private CheckBox overrideXML;
     @FXML
+    public CheckBox exampleEnhance;
+    @FXML
     private CheckBox needToStringHashcodeEquals;
     @FXML
     private CheckBox useLombokPlugin;
@@ -148,9 +150,6 @@ public class MainUIController extends BaseFXController {
 		});
 		// selectedProperty().addListener 解决应用配置的时候未触发Clicked事件
         useLombokPlugin.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            needToStringHashcodeEquals.setDisable(newValue);
-        });
-        useSwaggerPlugin.selectedProperty().addListener((observable, oldValue, newValue) -> {
             needToStringHashcodeEquals.setDisable(newValue);
         });
 
@@ -281,7 +280,8 @@ public class MainUIController extends BaseFXController {
         forUpdateCheckBox.setTooltip(new Tooltip("在Select语句中增加for update后缀"));
         useLombokPlugin.setTooltip(new Tooltip("实体类使用Lombok @Data简化代码"));
         useLombokPlugin.setTooltip(new Tooltip("实体类使用Lombok @Data简化代码"));
-        this.useSwaggerPlugin.setTooltip(new Tooltip("实体类使用Swagger注解代码"));
+        useSwaggerPlugin.setTooltip(new Tooltip("实体类使用Swagger注解"));
+        exampleEnhance.setTooltip(new Tooltip("example 对象增强（具体详见ExampleEnhancePlugin类说明）"));
     }
 
     void loadLeftDBTree() {
@@ -435,6 +435,7 @@ public class MainUIController extends BaseFXController {
         generatorConfig.setOffsetLimit(offsetLimitCheckBox.isSelected());
         generatorConfig.setComment(commentCheckBox.isSelected());
         generatorConfig.setOverrideXML(overrideXML.isSelected());
+        generatorConfig.setExampleEnhance(exampleEnhance.isSelected());
         generatorConfig.setNeedToStringHashcodeEquals(needToStringHashcodeEquals.isSelected());
         generatorConfig.setUseLombokPlugin(useLombokPlugin.isSelected());
         generatorConfig.setUseSwaggerPlugin(useSwaggerPlugin.isSelected());
@@ -468,6 +469,7 @@ public class MainUIController extends BaseFXController {
         offsetLimitCheckBox.setSelected(generatorConfig.isOffsetLimit());
         commentCheckBox.setSelected(generatorConfig.isComment());
         overrideXML.setSelected(generatorConfig.isOverrideXML());
+        exampleEnhance.setSelected(generatorConfig.isExampleEnhance());
         needToStringHashcodeEquals.setSelected(generatorConfig.isNeedToStringHashcodeEquals());
         useLombokPlugin.setSelected(generatorConfig.isUseLombokPlugin());
         useSwaggerPlugin.setSelected(generatorConfig.isUseSwaggerPlugin());

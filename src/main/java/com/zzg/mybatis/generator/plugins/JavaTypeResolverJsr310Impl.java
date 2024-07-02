@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
+ * for JSR310
  * @author hanakei
  * @since 2018/4/28
  */

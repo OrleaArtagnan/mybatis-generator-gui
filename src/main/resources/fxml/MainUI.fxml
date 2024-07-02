@@ -240,15 +240,19 @@
                                           selected="true" text="生成实体域注释(来自表注释)"/>
                                 <CheckBox fx:id="overrideXML" mnemonicParsing="false"
                                           selected="true" text="覆盖原XML"/>
+                                <CheckBox fx:id="exampleEnhance"
+                                          selected="true" text="Example 功能增强"/>
                             </HBox>
                             <HBox spacing="18.0">
                                 <CheckBox fx:id="useLombokPlugin" mnemonicParsing="false"
-                                          selected="true" text="LombokPlugin"/>
+                                          prefWidth="210.0"
+                                          selected="true" text="实体类使用 Lombok 注解"/>
                                 <CheckBox fx:id="needToStringHashcodeEquals" disable="true"
                                           mnemonicParsing="false"
                                           text="生成toString/hashCode/equals方法"/>
                                 <CheckBox fx:id="useSwaggerPlugin" mnemonicParsing="false"
-                                          selected="true" text="useSwaggerPlugin"/>
+                                          prefWidth="250.0"
+                                          selected="true" text="实体类使用 Swagger 注解"/>
                             </HBox>
                             <HBox prefHeight="100.0" prefWidth="200.0" spacing="18.0">
                                 <CheckBox fx:id="useSchemaPrefix" mnemonicParsing="false"

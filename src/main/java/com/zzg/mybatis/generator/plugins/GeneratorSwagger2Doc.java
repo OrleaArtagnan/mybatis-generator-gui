@@ -10,10 +10,9 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
 import java.util.List;
 
 /**
- * Project: mybatis-generator-gui
+ * 给对象添加 Swagger 注解
  *
  * @author zsf on 2024/7/2.
- * 给对象添加 Swagger 注解
  */
 public class GeneratorSwagger2Doc extends PluginAdapter {
 

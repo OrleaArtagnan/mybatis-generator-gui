@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Project: mybatis-generator-gui
+ * <p>
+ * forUpdate 插件
  *
  * @author slankka on 2017/11/4.
  */
